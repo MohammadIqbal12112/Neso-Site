@@ -1,5 +1,5 @@
 :root {
-  --primary: #440b2c; /* Header and logo background color, now identical */
+  --primary: #440b2c;
   --secondary: #91507a;
   --background: #fff;
   --footer-bg: #440b2c;
@@ -58,7 +58,7 @@ footer {
 }
 .logo img {
   display: block;
-  width: 150px; /* adjust as needed for your logo */
+  width: 150px;
   height: auto;
   margin: 0;
   padding: 0;
@@ -69,9 +69,10 @@ footer {
   flex: 1 1 auto;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end; /* align bottom like NESO */
+  align-items: center; /* center all items vertically */
   height: 100%;
-  margin-bottom: 3px; /* push to bottom of header */
+  margin-bottom: 0; /* reset previous pushing */
+  gap: 0; /* We'll use gaps between children below */
 }
 
 .search-bar {
@@ -82,24 +83,24 @@ footer {
   padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  position: relative;
-  min-width: 210px;
-  margin-right: 25px;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 270px;
+  margin-right: 0; /* reset previous */
 }
 
 .search-label {
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 2px;
-  align-self: flex-start;
+  margin-bottom: 3px;
   letter-spacing: 0.01em;
+  /* Put label closer to input */
 }
 
 .search-input-wrap {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
   width: 100%;
 }
@@ -110,12 +111,12 @@ footer {
   outline: none;
   background: transparent;
   color: #fff;
-  width: 160px;
+  width: 220px; /* wider input */
   font-size: 16px;
   padding: 0 0 2px 0;
   font-family: inherit;
   transition: border-bottom 0.2s;
-  margin-right: 30px; /* space for icon */
+  margin-right: 0; /* remove space for icon */
 }
 
 .search-bar input:focus {
@@ -129,9 +130,8 @@ footer {
 }
 
 .search-icon {
-  position: absolute;
-  right: 0;
-  bottom: 2px;
+  position: static; /* put icon as normal flow */
+  margin-left: 15px; /* space between input and icon */
   display: flex;
   align-items: center;
   pointer-events: none;
@@ -139,9 +139,9 @@ footer {
 
 .header-actions {
   display: flex;
-  align-items: flex-end;
-  gap: 18px;
-  margin-right: 16px;
+  align-items: center;
+  gap: 32px; /* space between icon, Data Portal, user icon */
+  margin-right: 0; /* reset previous */
 }
 
 .data-portal {
@@ -152,8 +152,9 @@ footer {
   border: none;
   font-size: 16px;
   padding: 0;
-  margin: 0 6px;
+  margin: 0;
   transition: text-decoration 0.2s;
+  letter-spacing: 0.01em;
 }
 
 .data-portal:hover {
@@ -163,6 +164,7 @@ footer {
 .user-icon {
   display: flex;
   align-items: center;
+  margin-left: 0; /* no extra gap */
 }
 .user-icon svg {
   display: block;
