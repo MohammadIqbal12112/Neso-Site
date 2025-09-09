@@ -83,7 +83,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* width: 100%; <-- Remove to prevent stretching */
+  /* width: 100%; -- removed to prevent stretching */
 }
 
 .search-input-wrap {
@@ -91,7 +91,7 @@ footer {
   align-items: center;
   border-bottom: 2px solid #fff;
   padding-bottom: 2px;
-  max-width: 340px; /* Controls width of search group */
+  max-width: 320px; /* Adjust width as needed for your design */
 }
 
 .search-label {
@@ -110,7 +110,7 @@ footer {
   color: #fff;
   font-size: 16px;
   font-family: inherit;
-  width: 120px;
+  width: 110px; /* Adjust for desired input length */
   padding: 0;
   margin: 0;
 }
