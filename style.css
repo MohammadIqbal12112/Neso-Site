@@ -64,7 +64,6 @@ footer {
   padding: 0;
 }
 
-/* === NESO-style search, Data Portal, and Person Icon === */
 .header-center {
   flex: 1 1 auto;
   display: flex;
@@ -84,15 +83,15 @@ footer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
+  /* width: 100%; <-- Remove to prevent stretching */
 }
 
 .search-input-wrap {
   display: flex;
   align-items: center;
-  width: 100%;
-  border-bottom: 2px solid #fff;   /* Shared underline */
+  border-bottom: 2px solid #fff;
   padding-bottom: 2px;
+  max-width: 340px; /* Controls width of search group */
 }
 
 .search-label {
@@ -100,7 +99,6 @@ footer {
   font-size: 16px;
   font-weight: 600;
   margin-right: 16px;
-  padding-bottom: 0;
   background: transparent;
   align-self: center;
 }
@@ -112,7 +110,7 @@ footer {
   color: #fff;
   font-size: 16px;
   font-family: inherit;
-  width: 200px;
+  width: 120px;
   padding: 0;
   margin: 0;
 }
@@ -130,7 +128,7 @@ footer {
 .search-icon {
   display: flex;
   align-items: center;
-  margin-left: 22px;
+  margin-left: 16px;
   pointer-events: none;
 }
 
