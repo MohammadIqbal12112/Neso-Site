@@ -21,6 +21,7 @@
           <label for="header-search" class="search-label">Search</label>
           <input id="header-search" type="text" aria-label="Search">
           <span class="search-icon">
+            <!-- Simple white outline SVG magnifier, matches NESO -->
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="1.3">
               <circle cx="9" cy="9" r="7"/>
               <line x1="15" y1="15" x2="19" y2="19"/>
@@ -54,28 +55,16 @@
 </nav>
 
   <main>
-    <!-- Updated: Add a flex row for breadcrumbs and favourite (bookmark) -->
-    <div class="breadcrumbs-row">
-      <div class="breadcrumbs">
-        <a href="#">Home</a>
-        <span>/</span>
-        <a href="#">Industry information</a>
-        <span>/</span>
-        <a href="#">Connections Reform</a>
-        <span>/</span>
-        <a href="#">Contact Connections Reform</a>
-        <span>/</span>
-        <span class="active">Complaints process - Connections Reform</span>
-      </div>
-      <div class="favourite">
-        <span class="fav-icon">
-          <!-- Bookmark SVG, NESO style -->
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#91507a" stroke-width="1.5">
-            <path d="M6 3h8a1 1 0 0 1 1 1v13l-5-4-5 4V4a1 1 0 0 1 1-1z"/>
-          </svg>
-        </span>
-        <span>Add to favourites</span>
-      </div>
+    <div class="breadcrumbs">
+      <a href="#">Home</a>
+      <span>/</span>
+      <a href="#">Industry information</a>
+      <span>/</span>
+      <a href="#">Connections Reform</a>
+      <span>/</span>
+      <a href="#">Contact Connections Reform</a>
+      <span>/</span>
+      <span class="active">Complaints process - Connections Reform</span>
     </div>
     <div class="content-container">
       <aside class="sidebar">
@@ -87,7 +76,10 @@
       <section class="main-content">
         <div class="headline-row">
           <h1>Complaints process for initial checks</h1>
-          <!-- Removed "favourite" from here -->
+          <div class="favourite">
+            <span class="fav-icon">&#128276;</span>
+            <span>Add to favourites</span>
+          </div>
         </div>
         <div class="page-body">
           <p>To support customers, we have introduced a new faster complaints procedure enabling customers to raise a complaint, or disagreement about the final outcome of initial checks. This faster process allows us to review complaints efficiently, ensuring projects with valid appeals can re-enter the Connections Reform process (also known as the Gate 2 to Whole Queue or G12WQ process).</p>

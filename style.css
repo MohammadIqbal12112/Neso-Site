@@ -164,6 +164,7 @@ footer {
   display: block;
 }
 
+/* Main navigation (unchanged) */
 .main-nav {
   background: var(--secondary);
   width: 100vw;
@@ -200,23 +201,13 @@ footer {
   background: #b36fa3;
 }
 
-/* Updated: Breadcrumbs row for NESO-style favourite alignment */
-.breadcrumbs-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 3vw;
-  position: relative;
-}
+/* Breadcrumbs, main content, sidebar, help button, footer, and media queries unchanged */
 
 .breadcrumbs {
   font-size: 15px;
-  margin: 30px 0 0 0;
+  margin: 30px 0 0 16vw;
   color: #7d5e7e;
   letter-spacing: 0.1px;
-  flex: 1 1 auto;
 }
 .breadcrumbs a {
   color: var(--primary);
@@ -230,25 +221,109 @@ footer {
   text-decoration: none;
 }
 
+/* Main Content */
+.content-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 1380px;
+  margin: 20px auto 0 auto;
+  padding: 0 3vw;
+  min-height: 60vh;
+  box-sizing: border-box;
+}
+.sidebar {
+  flex: 0 0 290px;
+  margin-right: 40px;
+}
+.sidebar-card {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 18px 22px;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar-card .arrow {
+  font-size: 22px;
+}
+.main-content {
+  flex: 1 1 0;
+  background: #fff;
+}
+.headline-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.headline-row h1 {
+  font-size: 2.3em;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
 .favourite {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #91507a;
+  color: #7d5e7e;
   font-size: 15px;
   font-weight: 500;
-  margin-top: 30px;
-  margin-right: 0;
-  flex: 0 0 auto;
-  justify-content: flex-end;
+  margin-top: 8px;
 }
 .fav-icon {
   font-size: 19px;
-  display: flex;
-  align-items: center;
+}
+.page-body {
+  font-size: 17px;
+  color: #222;
+  line-height: 1.7;
+  max-width: 830px;
+}
+.page-body h2 {
+  font-size: 1.15em;
+  margin: 25px 0 8px 0;
+  color: var(--primary);
+}
+.page-body h3 {
+  font-size: 1.12em;
+  margin: 22px 0 8px 0;
+  font-weight: 700;
+  color: var(--primary);
+}
+.page-body p {
+  margin: 0 0 14px 0;
 }
 
-/* Responsive: keep favourite right aligned on smaller screens */
+/* Help Button */
+.help-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 30px;
+  background: var(--secondary);
+  color: #fff;
+  font-size: 28px;
+  border-radius: 50%;
+  border: none;
+  width: 52px;
+  height: 52px;
+  box-shadow: 0 2px 10px rgba(100,0,70,0.10);
+  cursor: pointer;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.help-btn:hover {
+  background: #c38ac4;
+}
+
+/* Footer unchanged */
+/* ... (footer code as in your provided file) ... */
+
 @media (max-width: 1100px) {
   .content-container {
     flex-direction: column;
@@ -257,33 +332,59 @@ footer {
   .sidebar {
     margin: 0 0 18px 0;
   }
-  .breadcrumbs-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .favourite {
-    align-self: flex-end;
-    margin-top: 12px;
-    margin-bottom: 12px;
-  }
   .breadcrumbs {
     margin-left: 8vw;
   }
 }
 
 @media (max-width: 850px) {
-  .breadcrumbs-row {
-    flex-direction: column;
-    align-items: flex-start;
+  .topbar-inner,
+  .footer-main {
+    padding-left: 6px;
+    padding-right: 6px;
   }
-  .favourite {
-    align-self: flex-end;
-    margin-top: 12px;
-    margin-bottom: 12px;
+  .content-container {
+    padding: 0 4px;
   }
   .breadcrumbs {
     margin-left: 2vw;
   }
+  .footer-cols {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .header-center {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 8px;
+  }
+  .search-bar {
+    width: 100%;
+  }
 }
 
-/* Rest of your CSS remains unchanged */
+@media (max-width: 650px) {
+  .headline-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .main-nav ul {
+    flex-direction: column;
+  }
+  .main-nav ul li a {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding: 10px 12px;
+  }
+  .main-nav ul li:last-child a {
+    border-bottom: none;
+  }
+}
+
+::-webkit-scrollbar-thumb { background: #91507a; }
+::-webkit-scrollbar-track { background: #f7f7f7; }
